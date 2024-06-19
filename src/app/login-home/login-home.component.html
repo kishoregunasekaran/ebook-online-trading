@@ -1,0 +1,59 @@
+<div class="admin-home-container">
+    <h2>Book Categories</h2>
+    <div class="button-grid">
+      <button *ngFor="let category of categories" (click)="fetchBooks(category)">{{ category }}</button>
+    </div>
+    <div *ngIf="books.length > 0">
+      <h3>Books in {{ selectedCategory }}</h3>
+      <div *ngFor="let book of books" class="book-item">
+        <h4>{{ book.title }}</h4>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        <p>{{ book.price | currency }}</p>
+        <img *ngIf="book.bookImageUrl" [src]="book.bookImageUrl" alt="Book Cover" class="book-image">
+        <div class="actions">
+          <button (click)="addToCart(book)">Add to Cart</button>
+          <google-pay-button
+            *ngIf="book.paid"
+            environment="TEST"
+            buttonType="buy"
+            buttonColor="black"
+            [paymentRequest]="{
+              apiVersion: 2,
+              apiVersionMinor: 0,
+              allowedPaymentMethods: [
+                {
+                  type: 'CARD',
+                  parameters: {
+                    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                    allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+                  },
+                  tokenizationSpecification: {
+                    type: 'PAYMENT_GATEWAY',
+                    parameters: {
+                      gateway: 'example',
+                      gatewayMerchantId: 'exampleGatewayMerchantId'
+                    }
+                  }
+                }
+              ],
+              merchantInfo: {
+                merchantId: '12345678901234567890',
+                merchantName: 'Demo Merchant'
+              },
+              transactionInfo: {
+                totalPriceStatus: 'FINAL',
+                totalPriceLabel: 'Total',
+                totalPrice: book.price.toFixed(2),
+                currencyCode: 'USD',
+                countryCode: 'US'
+              }
+            }"
+            [style.width.px]="buttonWidth"
+            (loadpaymentdata)="onLoadPaymentData($event)"
+          ></google-pay-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

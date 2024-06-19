@@ -1,0 +1,21 @@
+<div class="admin-home-container">
+    <h2>Book Categories</h2>
+    <div class="button-grid">
+      <button *ngFor="let category of categories" (click)="fetchBooks(category)">{{ category }}</button>
+    </div>
+    <div *ngIf="books.length > 0">
+      <h3>Books in {{ selectedCategory }}</h3>
+      <div *ngFor="let book of books" class="book-item">
+        <h4>{{ book.title }}</h4>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        <p>{{ book.price | currency }}</p>
+        <a [href]="book.ebook_link" target="_blank">Read</a>
+        <div class="actions">
+          <button (click)="editBook(book)">Edit</button>
+          <button (click)="deleteBook(book._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

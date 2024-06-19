@@ -1,0 +1,27 @@
+.head {
+    background-color: #3d27e8;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.btmsection {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.btmsection a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    margin: 0 1rem; /* Add space between links */
+    padding-left:80px;
+}
+
+.btmsection a:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}

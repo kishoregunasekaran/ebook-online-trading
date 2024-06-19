@@ -1,0 +1,60 @@
+/* Global reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  /* Top bar section */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #df0808;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .top-bar .left-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-bar .title {
+    margin-right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .top-bar .navigation {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-bar .navigation li .reg{
+    margin-left: 900px;
+    
+  }
+  .top-bar .navigation li .log{
+    margin-left: 50px;
+  }
+  
+  .top-bar .navigation li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: left;
+  }
+  
+  .top-bar .navigation li a:hover {
+    background-color: #36f046;
+  }
+  

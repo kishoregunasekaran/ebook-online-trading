@@ -1,0 +1,59 @@
+.admin-home-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-home-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-grid button {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-grid button:hover {
+    background-color: #0056b3;
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.book-item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.book-item p {
+    margin: 5px 0;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
